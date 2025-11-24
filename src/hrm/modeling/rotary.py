@@ -73,4 +73,9 @@ class RotaryPositionEmbedding(nn.Module):
         Returns:
             Tensor with rotary embeddings applied
         """
-        return (x * self.cos) + (self.rotate_half(x) * self.sin)
+        # Get sequence length from input
+        seq_len = x.shape[1]
+        # Slice cos and sin to match sequence length
+        cos = self.cos[:seq_len]
+        sin = self.sin[:seq_len]
+        return (x * cos) + (self.rotate_half(x) * sin)

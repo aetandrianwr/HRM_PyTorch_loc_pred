@@ -12,6 +12,10 @@ from .hrm import (
     HiddenStates,
     HRMACTOutput,
 )
+from .hrm_location import (
+    LocationHRM,
+    LocationHRMConfig,
+)
 from .init_utils import trunc_normal_init
 from .linear import Linear
 from .rmsnorm import rms_norm, RMSNorm
@@ -27,6 +31,8 @@ __all__ = [
     'ACTConfig',
     'HiddenStates',
     'HRMACTOutput',
+    'LocationHRM',
+    'LocationHRMConfig',
     'trunc_normal_init',
     'Linear',
     'rms_norm',

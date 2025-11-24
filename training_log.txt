@@ -1,0 +1,230 @@
+Using device: cuda
+GPU: NVIDIA L4
+
+============================================================
+Loading datasets...
+============================================================
+Loaded 7424 samples from data/geolife/geolife_transformer_7_train.pk
+Vocabulary size: 1187 (unique locations: 1156)
+Loaded 3334 samples from data/geolife/geolife_transformer_7_validation.pk
+Vocabulary size: 1176 (unique locations: 382)
+Loaded 3502 samples from data/geolife/geolife_transformer_7_test.pk
+Vocabulary size: 1177 (unique locations: 355)
+Train samples: 7424
+Val samples: 3334
+Test samples: 3502
+
+============================================================
+Initializing model...
+============================================================
+Total parameters: 7,532,896
+Trainable parameters: 7,532,384
+
+============================================================
+Starting training...
+============================================================
+
+
+============================================================
+Epoch 1/100
+============================================================
+Epoch 1 | Batch 10/58 | Loss: 6.0764 | Acc@1: 0.1172 | Acc@5: 0.2656 | Acc@10: 0.3047
+Epoch 1 | Batch 20/58 | Loss: 5.5151 | Acc@1: 0.1406 | Acc@5: 0.3438 | Acc@10: 0.4375
+Epoch 1 | Batch 30/58 | Loss: 4.7284 | Acc@1: 0.2734 | Acc@5: 0.4922 | Acc@10: 0.5469
+Epoch 1 | Batch 40/58 | Loss: 4.6963 | Acc@1: 0.2891 | Acc@5: 0.4922 | Acc@10: 0.5469
+Epoch 1 | Batch 50/58 | Loss: 4.2391 | Acc@1: 0.3125 | Acc@5: 0.5781 | Acc@10: 0.6094
+
+Validation Results:
+  Loss: 4.8179
+  Acc@1: 0.2781 (27.81%)
+  Acc@5: 0.4925 (49.25%)
+  Acc@10: 0.5422 (54.22%)
+
+
+Test Results:
+  Loss: 5.1540
+  Acc@1: 0.2478 (24.78%)
+  Acc@5: 0.4182 (41.82%)
+  Acc@10: 0.4743 (47.43%)
+
+Epoch 1 Summary:
+  Train - Loss: 5.2211 | Acc@1: 0.2204
+  Val   - Loss: 4.8179 | Acc@1: 0.2781
+  Test  - Loss: 5.1540 | Acc@1: 0.2478
+  Time: 15.76s | LR: 0.000100
+  Saved checkpoint: checkpoints/location_hrm_epoch1.pt
+  New best validation accuracy! Saved to checkpoints/location_hrm_best_val.pt
+  New best test accuracy! Saved to checkpoints/location_hrm_best_test.pt
+
+============================================================
+Epoch 2/100
+============================================================
+Epoch 2 | Batch 10/58 | Loss: 3.9182 | Acc@1: 0.3359 | Acc@5: 0.6172 | Acc@10: 0.6328
+Epoch 2 | Batch 20/58 | Loss: 3.7838 | Acc@1: 0.3359 | Acc@5: 0.6406 | Acc@10: 0.7109
+Epoch 2 | Batch 30/58 | Loss: 4.3422 | Acc@1: 0.2656 | Acc@5: 0.5547 | Acc@10: 0.5938
+Epoch 2 | Batch 40/58 | Loss: 4.3362 | Acc@1: 0.2969 | Acc@5: 0.5469 | Acc@10: 0.5625
+Epoch 2 | Batch 50/58 | Loss: 3.8924 | Acc@1: 0.3359 | Acc@5: 0.6094 | Acc@10: 0.6797
+
+Validation Results:
+  Loss: 4.6489
+  Acc@1: 0.2734 (27.34%)
+  Acc@5: 0.5174 (51.74%)
+  Acc@10: 0.5761 (57.61%)
+
+
+Test Results:
+  Loss: 5.1144
+  Acc@1: 0.2244 (22.44%)
+  Acc@5: 0.4386 (43.86%)
+  Acc@10: 0.4992 (49.92%)
+
+Epoch 2 Summary:
+  Train - Loss: 3.9958 | Acc@1: 0.3206
+  Val   - Loss: 4.6489 | Acc@1: 0.2734
+  Test  - Loss: 5.1144 | Acc@1: 0.2244
+  Time: 15.37s | LR: 0.000100
+
+============================================================
+Epoch 3/100
+============================================================
+Epoch 3 | Batch 10/58 | Loss: 4.1405 | Acc@1: 0.2344 | Acc@5: 0.5703 | Acc@10: 0.6328
+Epoch 3 | Batch 20/58 | Loss: 3.5251 | Acc@1: 0.3672 | Acc@5: 0.6719 | Acc@10: 0.7422
+Epoch 3 | Batch 30/58 | Loss: 3.4994 | Acc@1: 0.2734 | Acc@5: 0.6953 | Acc@10: 0.7578
+Epoch 3 | Batch 40/58 | Loss: 3.3053 | Acc@1: 0.3594 | Acc@5: 0.6953 | Acc@10: 0.7578
+Epoch 3 | Batch 50/58 | Loss: 3.6470 | Acc@1: 0.3047 | Acc@5: 0.6406 | Acc@10: 0.6953
+
+Validation Results:
+  Loss: 4.3258
+  Acc@1: 0.2940 (29.40%)
+  Acc@5: 0.5580 (55.80%)
+  Acc@10: 0.6117 (61.17%)
+
+
+Test Results:
+  Loss: 4.6791
+  Acc@1: 0.2660 (26.60%)
+  Acc@5: 0.4949 (49.49%)
+  Acc@10: 0.5646 (56.46%)
+
+Epoch 3 Summary:
+  Train - Loss: 3.6356 | Acc@1: 0.3323
+  Val   - Loss: 4.3258 | Acc@1: 0.2940
+  Test  - Loss: 4.6791 | Acc@1: 0.2660
+  Time: 15.64s | LR: 0.000100
+  Saved checkpoint: checkpoints/location_hrm_epoch3.pt
+  New best validation accuracy! Saved to checkpoints/location_hrm_best_val.pt
+  New best test accuracy! Saved to checkpoints/location_hrm_best_test.pt
+
+============================================================
+Epoch 4/100
+============================================================
+Epoch 4 | Batch 10/58 | Loss: 3.6707 | Acc@1: 0.3594 | Acc@5: 0.6406 | Acc@10: 0.6641
+Epoch 4 | Batch 20/58 | Loss: 3.3932 | Acc@1: 0.3125 | Acc@5: 0.6641 | Acc@10: 0.7109
+Epoch 4 | Batch 30/58 | Loss: 3.8328 | Acc@1: 0.2891 | Acc@5: 0.6250 | Acc@10: 0.6562
+Epoch 4 | Batch 40/58 | Loss: 3.4229 | Acc@1: 0.3438 | Acc@5: 0.6641 | Acc@10: 0.7188
+Epoch 4 | Batch 50/58 | Loss: 3.5165 | Acc@1: 0.2891 | Acc@5: 0.6562 | Acc@10: 0.6875
+
+Validation Results:
+  Loss: 4.2095
+  Acc@1: 0.3235 (32.35%)
+  Acc@5: 0.6030 (60.30%)
+  Acc@10: 0.6400 (64.00%)
+
+
+Test Results:
+  Loss: 4.6026
+  Acc@1: 0.2993 (29.93%)
+  Acc@5: 0.5314 (53.14%)
+  Acc@10: 0.5673 (56.73%)
+
+Epoch 4 Summary:
+  Train - Loss: 3.4379 | Acc@1: 0.3443
+  Val   - Loss: 4.2095 | Acc@1: 0.3235
+  Test  - Loss: 4.6026 | Acc@1: 0.2993
+  Time: 15.81s | LR: 0.000100
+  Saved checkpoint: checkpoints/location_hrm_epoch4.pt
+  New best validation accuracy! Saved to checkpoints/location_hrm_best_val.pt
+  New best test accuracy! Saved to checkpoints/location_hrm_best_test.pt
+
+============================================================
+Epoch 5/100
+============================================================
+Epoch 5 | Batch 10/58 | Loss: 3.5448 | Acc@1: 0.3359 | Acc@5: 0.6094 | Acc@10: 0.6875
+Epoch 5 | Batch 20/58 | Loss: 3.7013 | Acc@1: 0.2969 | Acc@5: 0.6328 | Acc@10: 0.6797
+Epoch 5 | Batch 30/58 | Loss: 3.0820 | Acc@1: 0.3906 | Acc@5: 0.7188 | Acc@10: 0.7734
+Epoch 5 | Batch 40/58 | Loss: 3.1340 | Acc@1: 0.3438 | Acc@5: 0.7031 | Acc@10: 0.7656
+Epoch 5 | Batch 50/58 | Loss: 3.0585 | Acc@1: 0.3438 | Acc@5: 0.7344 | Acc@10: 0.7656
+
+Validation Results:
+  Loss: 4.3362
+  Acc@1: 0.2963 (29.63%)
+  Acc@5: 0.5764 (57.64%)
+  Acc@10: 0.6277 (62.77%)
+
+
+Test Results:
+  Loss: 4.6809
+  Acc@1: 0.2648 (26.48%)
+  Acc@5: 0.5418 (54.18%)
+  Acc@10: 0.5825 (58.25%)
+
+Epoch 5 Summary:
+  Train - Loss: 3.2974 | Acc@1: 0.3516
+  Val   - Loss: 4.3362 | Acc@1: 0.2963
+  Test  - Loss: 4.6809 | Acc@1: 0.2648
+  Time: 15.72s | LR: 0.000099
+  Saved checkpoint: checkpoints/location_hrm_epoch5.pt
+
+============================================================
+Epoch 6/100
+============================================================
+Epoch 6 | Batch 10/58 | Loss: 3.6368 | Acc@1: 0.2891 | Acc@5: 0.6328 | Acc@10: 0.6641
+Epoch 6 | Batch 20/58 | Loss: 2.9983 | Acc@1: 0.3672 | Acc@5: 0.7109 | Acc@10: 0.7656
+Epoch 6 | Batch 30/58 | Loss: 3.3981 | Acc@1: 0.3203 | Acc@5: 0.6484 | Acc@10: 0.7266
+Epoch 6 | Batch 40/58 | Loss: 2.9484 | Acc@1: 0.3750 | Acc@5: 0.7266 | Acc@10: 0.7891
+Epoch 6 | Batch 50/58 | Loss: 3.4776 | Acc@1: 0.2656 | Acc@5: 0.6406 | Acc@10: 0.7188
+
+Validation Results:
+  Loss: 4.3438
+  Acc@1: 0.3235 (32.35%)
+  Acc@5: 0.5904 (59.04%)
+  Acc@10: 0.6441 (64.41%)
+
+
+Test Results:
+  Loss: 4.7315
+  Acc@1: 0.2973 (29.73%)
+  Acc@5: 0.5419 (54.19%)
+  Acc@10: 0.5696 (56.96%)
+
+Epoch 6 Summary:
+  Train - Loss: 3.1854 | Acc@1: 0.3592
+  Val   - Loss: 4.3438 | Acc@1: 0.3235
+  Test  - Loss: 4.7315 | Acc@1: 0.2973
+  Time: 15.56s | LR: 0.000099
+
+============================================================
+Epoch 7/100
+============================================================
+Epoch 7 | Batch 10/58 | Loss: 2.7591 | Acc@1: 0.3828 | Acc@5: 0.7656 | Acc@10: 0.8281
+Epoch 7 | Batch 20/58 | Loss: 2.8036 | Acc@1: 0.3984 | Acc@5: 0.7344 | Acc@10: 0.7812
+Epoch 7 | Batch 30/58 | Loss: 3.4726 | Acc@1: 0.3047 | Acc@5: 0.6250 | Acc@10: 0.6719
+Epoch 7 | Batch 40/58 | Loss: 2.9253 | Acc@1: 0.3750 | Acc@5: 0.7266 | Acc@10: 0.7969
+Epoch 7 | Batch 50/58 | Loss: 3.1628 | Acc@1: 0.3438 | Acc@5: 0.7031 | Acc@10: 0.7422
+
+Validation Results:
+  Loss: 4.3778
+  Acc@1: 0.3058 (30.58%)
+  Acc@5: 0.5909 (59.09%)
+  Acc@10: 0.6526 (65.26%)
+
+
+Test Results:
+  Loss: 4.8465
+  Acc@1: 0.2882 (28.82%)
+  Acc@5: 0.5232 (52.32%)
+  Acc@10: 0.5674 (56.74%)
+
+Epoch 7 Summary:
+  Train - Loss: 3.0716 | Acc@1: 0.3658
+  Val   - Loss: 4.3778 | Acc@1: 0.3058

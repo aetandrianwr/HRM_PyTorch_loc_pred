@@ -12,6 +12,10 @@ from .training import (
     TrainingBatch,
     step,
 )
+from .location_data import (
+    LocationDataset,
+    LocationDataLoader,
+)
 
 __all__ = [
     'Difficulty',
@@ -20,4 +24,6 @@ __all__ = [
     'sudoku_loss',
     'TrainingBatch',
     'step',
+    'LocationDataset',
+    'LocationDataLoader',
 ]
