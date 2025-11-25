@@ -118,12 +118,12 @@ def train_sota_transformer(
     dataset_name: str = "geolife",
     data_dir: str = "data",
     checkpoint_dir: str = "checkpoints",
-    batch_size: int = 128,  # Larger batch
-    learning_rate: float = 0.0015,  # Higher LR with OneCycle
-    num_epochs: int = 300,
+    batch_size: int = 96,  # Smaller batch for better generalization
+    learning_rate: float = 0.0008,  # Lower LR, train longer
+    num_epochs: int = 500,  # More epochs
     save_every: int = 10,
     device: str = "cuda",
-    patience: int = 50,
+    patience: int = 80,  # More patience
 ):
     """Train SOTA transformer."""
     device = torch.device(device if torch.cuda.is_available() else 'cpu')
@@ -199,23 +199,24 @@ def train_sota_transformer(
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=learning_rate,
-        betas=(0.9, 0.98),
-        weight_decay=0.05,  # Higher weight decay
+        betas=(0.9, 0.999),  # Standard betas
+        weight_decay=0.01,  # Lower weight decay
         eps=1e-8
     )
     
-    # OneCycle LR scheduler (Smith, 2018)
+    # Cosine annealing with warmup (not OneCycle)
     steps_per_epoch = len(train_loader)
     total_steps = steps_per_epoch * num_epochs
-    scheduler = torch.optim.lr_scheduler.OneCycleLR(
-        optimizer,
-        max_lr=learning_rate,
-        total_steps=total_steps,
-        pct_start=0.1,  # 10% warmup
-        anneal_strategy='cos',
-        div_factor=25,
-        final_div_factor=1000,
-    )
+    warmup_epochs = 30
+    warmup_steps = steps_per_epoch * warmup_epochs
+    
+    def lr_lambda(step):
+        if step < warmup_steps:
+            return step / warmup_steps
+        progress = (step - warmup_steps) / (total_steps - warmup_steps)
+        return 0.1 + 0.9 * 0.5 * (1 + math.cos(math.pi * progress))
+    
+    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
     
     # Mixed precision
     scaler = torch.cuda.amp.GradScaler()
