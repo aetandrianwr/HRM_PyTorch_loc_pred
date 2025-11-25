@@ -1,0 +1,584 @@
+/content/HRM_PyTorch_loc_pred/src/hrm/modeling/hrm_enhanced.py:425: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+  hour = (start_min // 60) % 24
+No module named 'torch_sparse'
+`torch-sparse` is not installed, which is ok, as long as no sparse modules are used.
+Using device: cuda
+GPU: NVIDIA L4
+
+============================================================
+Loading datasets...
+============================================================
+Loaded 7424 samples from data/geolife/geolife_transformer_7_train.pk
+Vocabulary size: 1187 (unique locations: 1156)
+Loaded 3334 samples from data/geolife/geolife_transformer_7_validation.pk
+Vocabulary size: 1176 (unique locations: 382)
+Loaded 3502 samples from data/geolife/geolife_transformer_7_test.pk
+Vocabulary size: 1177 (unique locations: 355)
+Train samples: 7424
+Val samples: 3334
+Test samples: 3502
+
+============================================================
+Initializing Enhanced HRM...
+============================================================
+Total parameters: 440,669
+Trainable parameters: 440,669
+Target: <500K parameters
+✓ Within budget!
+EMA decay: 0.999
+Temporal jittering: enabled
+Adaptive gradient accumulation: enabled
+Loss: Adaptive TopKCrossEntropyLoss
+
+============================================================
+Starting training with advanced techniques...
+============================================================
+
+
+============================================================
+Epoch 1/400
+============================================================
+Epoch 1 | Batch 10/58 | Loss: 3.3854 (TopK: 3.3798, CE: 7.0839) | Acc@1: 0.0000 | Acc@5: 0.0000 | Acc@10: 0.0000 | AccumSteps: 1
+Epoch 1 | Batch 20/58 | Loss: 3.3803 (TopK: 3.3747, CE: 7.0844) | Acc@1: 0.0000 | Acc@5: 0.0000 | Acc@10: 0.0000 | AccumSteps: 1
+Epoch 1 | Batch 30/58 | Loss: 3.3682 (TopK: 3.3626, CE: 7.0800) | Acc@1: 0.0000 | Acc@5: 0.0078 | Acc@10: 0.0078 | AccumSteps: 1
+Epoch 1 | Batch 40/58 | Loss: 3.3604 (TopK: 3.3548, CE: 7.0778) | Acc@1: 0.0000 | Acc@5: 0.0000 | Acc@10: 0.0000 | AccumSteps: 1
+Epoch 1 | Batch 50/58 | Loss: 3.3548 (TopK: 3.3492, CE: 7.0761) | Acc@1: 0.0156 | Acc@5: 0.0625 | Acc@10: 0.1094 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0854
+  Acc@1: 0.0000 (0.00%)
+  Acc@5: 0.0003 (0.03%)
+  Acc@10: 0.0006 (0.06%)
+
+
+Test Results:
+  Loss: 7.0835
+  Acc@1: 0.0003 (0.03%)
+  Acc@5: 0.0006 (0.06%)
+  Acc@10: 0.0011 (0.11%)
+
+Epoch 1 Summary:
+  Train - Loss: 3.3702 (TopK: 3.3646[1.00], CE: 7.0804) | Acc@1: 0.0081
+  Val   - Loss: 7.0854 | Acc@1: 0.0000
+  Test  - Loss: 7.0835 | Acc@1: 0.0003
+  Time: 20.86s | LR: 0.000053
+  Params: 440,669
+  ✅ New best test accuracy! (0.03%)
+
+============================================================
+Epoch 2/400
+============================================================
+Epoch 2 | Batch 10/58 | Loss: 3.3585 (TopK: 3.3473, CE: 7.0752) | Acc@1: 0.0938 | Acc@5: 0.1641 | Acc@10: 0.2188 | AccumSteps: 1
+Epoch 2 | Batch 20/58 | Loss: 3.3565 (TopK: 3.3453, CE: 7.0738) | Acc@1: 0.1328 | Acc@5: 0.2734 | Acc@10: 0.2891 | AccumSteps: 1
+Epoch 2 | Batch 30/58 | Loss: 3.3570 (TopK: 3.3458, CE: 7.0741) | Acc@1: 0.0938 | Acc@5: 0.2188 | Acc@10: 0.3125 | AccumSteps: 1
+Epoch 2 | Batch 40/58 | Loss: 3.3555 (TopK: 3.3443, CE: 7.0731) | Acc@1: 0.1016 | Acc@5: 0.2734 | Acc@10: 0.3203 | AccumSteps: 1
+Epoch 2 | Batch 50/58 | Loss: 3.3553 (TopK: 3.3441, CE: 7.0722) | Acc@1: 0.0781 | Acc@5: 0.2500 | Acc@10: 0.3125 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0847
+  Acc@1: 0.0000 (0.00%)
+  Acc@5: 0.0003 (0.03%)
+  Acc@10: 0.0006 (0.06%)
+
+
+Test Results:
+  Loss: 7.0830
+  Acc@1: 0.0003 (0.03%)
+  Acc@5: 0.0003 (0.03%)
+  Acc@10: 0.0011 (0.11%)
+
+Epoch 2 Summary:
+  Train - Loss: 3.3567 (TopK: 3.3455[1.00], CE: 7.0738) | Acc@1: 0.0977
+  Val   - Loss: 7.0847 | Acc@1: 0.0000
+  Test  - Loss: 7.0830 | Acc@1: 0.0003
+  Time: 20.37s | LR: 0.000107
+  Params: 440,669
+
+============================================================
+Epoch 3/400
+============================================================
+Epoch 3 | Batch 10/58 | Loss: 3.3585 (TopK: 3.3417, CE: 7.0690) | Acc@1: 0.1094 | Acc@5: 0.3516 | Acc@10: 0.3984 | AccumSteps: 1
+Epoch 3 | Batch 20/58 | Loss: 3.3617 (TopK: 3.3450, CE: 7.0695) | Acc@1: 0.0625 | Acc@5: 0.1953 | Acc@10: 0.2734 | AccumSteps: 1
+Epoch 3 | Batch 30/58 | Loss: 3.3531 (TopK: 3.3363, CE: 7.0567) | Acc@1: 0.1875 | Acc@5: 0.3672 | Acc@10: 0.4219 | AccumSteps: 1
+Epoch 3 | Batch 40/58 | Loss: 3.3473 (TopK: 3.3306, CE: 7.0406) | Acc@1: 0.1719 | Acc@5: 0.3359 | Acc@10: 0.4609 | AccumSteps: 1
+Epoch 3 | Batch 50/58 | Loss: 3.2854 (TopK: 3.2688, CE: 6.9554) | Acc@1: 0.2188 | Acc@5: 0.4453 | Acc@10: 0.5000 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0836
+  Acc@1: 0.0000 (0.00%)
+  Acc@5: 0.0003 (0.03%)
+  Acc@10: 0.0009 (0.09%)
+
+
+Test Results:
+  Loss: 7.0822
+  Acc@1: 0.0003 (0.03%)
+  Acc@5: 0.0003 (0.03%)
+  Acc@10: 0.0011 (0.11%)
+
+Epoch 3 Summary:
+  Train - Loss: 3.3369 (TopK: 3.3202[1.00], CE: 7.0314) | Acc@1: 0.1537
+  Val   - Loss: 7.0836 | Acc@1: 0.0000
+  Test  - Loss: 7.0822 | Acc@1: 0.0003
+  Time: 20.65s | LR: 0.000160
+  Params: 440,669
+
+============================================================
+Epoch 4/400
+============================================================
+Epoch 4 | Batch 10/58 | Loss: 3.1728 (TopK: 3.1512, CE: 6.7601) | Acc@1: 0.1719 | Acc@5: 0.3516 | Acc@10: 0.3906 | AccumSteps: 1
+Epoch 4 | Batch 20/58 | Loss: 3.0790 (TopK: 3.0577, CE: 6.6030) | Acc@1: 0.1797 | Acc@5: 0.4922 | Acc@10: 0.5469 | AccumSteps: 1
+Epoch 4 | Batch 30/58 | Loss: 3.0497 (TopK: 3.0293, CE: 6.4248) | Acc@1: 0.2031 | Acc@5: 0.4219 | Acc@10: 0.4844 | AccumSteps: 1
+Epoch 4 | Batch 40/58 | Loss: 2.9492 (TopK: 2.9287, CE: 6.3479) | Acc@1: 0.2422 | Acc@5: 0.3984 | Acc@10: 0.4609 | AccumSteps: 1
+Epoch 4 | Batch 50/58 | Loss: 2.9061 (TopK: 2.8856, CE: 6.2983) | Acc@1: 0.2109 | Acc@5: 0.5156 | Acc@10: 0.5781 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0813
+  Acc@1: 0.0000 (0.00%)
+  Acc@5: 0.0003 (0.03%)
+  Acc@10: 0.0009 (0.09%)
+
+
+Test Results:
+  Loss: 7.0804
+  Acc@1: 0.0003 (0.03%)
+  Acc@5: 0.0006 (0.06%)
+  Acc@10: 0.0011 (0.11%)
+
+Epoch 4 Summary:
+  Train - Loss: 3.0430 (TopK: 3.0220[0.99], CE: 6.5187) | Acc@1: 0.2073
+  Val   - Loss: 7.0813 | Acc@1: 0.0000
+  Test  - Loss: 7.0804 | Acc@1: 0.0003
+  Time: 20.06s | LR: 0.000213
+  Params: 440,669
+
+============================================================
+Epoch 5/400
+============================================================
+Epoch 5 | Batch 10/58 | Loss: 2.9003 (TopK: 2.8749, CE: 6.2636) | Acc@1: 0.2188 | Acc@5: 0.4688 | Acc@10: 0.5625 | AccumSteps: 1
+Epoch 5 | Batch 20/58 | Loss: 2.7716 (TopK: 2.7466, CE: 6.0765) | Acc@1: 0.2656 | Acc@5: 0.4766 | Acc@10: 0.5312 | AccumSteps: 1
+Epoch 5 | Batch 30/58 | Loss: 2.9949 (TopK: 2.9706, CE: 6.2134) | Acc@1: 0.1953 | Acc@5: 0.3516 | Acc@10: 0.4531 | AccumSteps: 1
+Epoch 5 | Batch 40/58 | Loss: 2.6577 (TopK: 2.6349, CE: 5.6839) | Acc@1: 0.2422 | Acc@5: 0.4531 | Acc@10: 0.5078 | AccumSteps: 1
+Epoch 5 | Batch 50/58 | Loss: 2.8676 (TopK: 2.8436, CE: 6.0486) | Acc@1: 0.1719 | Acc@5: 0.4688 | Acc@10: 0.5312 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0778
+  Acc@1: 0.0000 (0.00%)
+  Acc@5: 0.0003 (0.03%)
+  Acc@10: 0.0969 (9.69%)
+
+
+Test Results:
+  Loss: 7.0778
+  Acc@1: 0.0003 (0.03%)
+  Acc@5: 0.0006 (0.06%)
+  Acc@10: 0.0804 (8.04%)
+
+Epoch 5 Summary:
+  Train - Loss: 2.8131 (TopK: 2.7890[0.99], CE: 6.0090) | Acc@1: 0.2278
+  Val   - Loss: 7.0778 | Acc@1: 0.0000
+  Test  - Loss: 7.0778 | Acc@1: 0.0003
+  Time: 20.84s | LR: 0.000267
+  Params: 440,669
+
+============================================================
+Epoch 6/400
+============================================================
+Epoch 6 | Batch 10/58 | Loss: 2.6096 (TopK: 2.5819, CE: 5.6667) | Acc@1: 0.2344 | Acc@5: 0.5000 | Acc@10: 0.5703 | AccumSteps: 1
+Epoch 6 | Batch 20/58 | Loss: 2.5943 (TopK: 2.5673, CE: 5.5618) | Acc@1: 0.2109 | Acc@5: 0.4375 | Acc@10: 0.4766 | AccumSteps: 1
+Epoch 6 | Batch 30/58 | Loss: 2.5681 (TopK: 2.5406, CE: 5.5962) | Acc@1: 0.2422 | Acc@5: 0.4922 | Acc@10: 0.5391 | AccumSteps: 1
+Epoch 6 | Batch 40/58 | Loss: 2.5239 (TopK: 2.4971, CE: 5.4809) | Acc@1: 0.1875 | Acc@5: 0.5078 | Acc@10: 0.5547 | AccumSteps: 1
+Epoch 6 | Batch 50/58 | Loss: 2.3908 (TopK: 2.3650, CE: 5.2360) | Acc@1: 0.2500 | Acc@5: 0.5078 | Acc@10: 0.5391 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0726
+  Acc@1: 0.1073 (10.73%)
+  Acc@5: 0.1878 (18.78%)
+  Acc@10: 0.1939 (19.39%)
+
+
+Test Results:
+  Loss: 7.0741
+  Acc@1: 0.0954 (9.54%)
+  Acc@5: 0.1813 (18.13%)
+  Acc@10: 0.1816 (18.16%)
+
+Epoch 6 Summary:
+  Train - Loss: 2.5968 (TopK: 2.5696[0.99], CE: 5.5896) | Acc@1: 0.2223
+  Val   - Loss: 7.0726 | Acc@1: 0.1073
+  Test  - Loss: 7.0741 | Acc@1: 0.0954
+  Time: 20.12s | LR: 0.000320
+  Params: 440,669
+  Saved checkpoint: checkpoints/enhanced_hrm_epoch6.pt
+  ✅ New best validation accuracy! (10.73%)
+  ✅ New best test accuracy! (9.54%)
+
+============================================================
+Epoch 7/400
+============================================================
+Epoch 7 | Batch 10/58 | Loss: 2.6148 (TopK: 2.5820, CE: 5.7024) | Acc@1: 0.1797 | Acc@5: 0.4688 | Acc@10: 0.5078 | AccumSteps: 1
+Epoch 7 | Batch 20/58 | Loss: 2.5494 (TopK: 2.5168, CE: 5.6220) | Acc@1: 0.2109 | Acc@5: 0.4531 | Acc@10: 0.4922 | AccumSteps: 1
+Epoch 7 | Batch 30/58 | Loss: 2.1738 (TopK: 2.1451, CE: 4.8827) | Acc@1: 0.2891 | Acc@5: 0.5312 | Acc@10: 0.5938 | AccumSteps: 1
+Epoch 7 | Batch 40/58 | Loss: 2.4823 (TopK: 2.4497, CE: 5.5541) | Acc@1: 0.2578 | Acc@5: 0.4922 | Acc@10: 0.5469 | AccumSteps: 1
+Epoch 7 | Batch 50/58 | Loss: 2.6847 (TopK: 2.6499, CE: 5.9575) | Acc@1: 0.1875 | Acc@5: 0.4297 | Acc@10: 0.4766 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0657
+  Acc@1: 0.1073 (10.73%)
+  Acc@5: 0.1936 (19.36%)
+  Acc@10: 0.1944 (19.44%)
+
+
+Test Results:
+  Loss: 7.0690
+  Acc@1: 0.0954 (9.54%)
+  Acc@5: 0.1813 (18.13%)
+  Acc@10: 0.1813 (18.13%)
+
+Epoch 7 Summary:
+  Train - Loss: 2.4722 (TopK: 2.4400[0.99], CE: 5.4988) | Acc@1: 0.2322
+  Val   - Loss: 7.0657 | Acc@1: 0.1073
+  Test  - Loss: 7.0690 | Acc@1: 0.0954
+  Time: 20.42s | LR: 0.000373
+  Params: 440,669
+
+============================================================
+Epoch 8/400
+============================================================
+Epoch 8 | Batch 10/58 | Loss: 2.6079 (TopK: 2.5689, CE: 5.8178) | Acc@1: 0.2266 | Acc@5: 0.4609 | Acc@10: 0.5625 | AccumSteps: 1
+Epoch 8 | Batch 20/58 | Loss: 2.3163 (TopK: 2.2815, CE: 5.1815) | Acc@1: 0.2812 | Acc@5: 0.5312 | Acc@10: 0.5938 | AccumSteps: 1
+Epoch 8 | Batch 30/58 | Loss: 2.4828 (TopK: 2.4453, CE: 5.5680) | Acc@1: 0.2656 | Acc@5: 0.5078 | Acc@10: 0.5391 | AccumSteps: 1
+Epoch 8 | Batch 40/58 | Loss: 2.3682 (TopK: 2.3335, CE: 5.2279) | Acc@1: 0.2656 | Acc@5: 0.5547 | Acc@10: 0.5859 | AccumSteps: 1
+Epoch 8 | Batch 50/58 | Loss: 2.5956 (TopK: 2.5572, CE: 5.7585) | Acc@1: 0.2422 | Acc@5: 0.4766 | Acc@10: 0.5391 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0567
+  Acc@1: 0.1073 (10.73%)
+  Acc@5: 0.1942 (19.42%)
+  Acc@10: 0.2217 (22.17%)
+
+
+Test Results:
+  Loss: 7.0620
+  Acc@1: 0.0954 (9.54%)
+  Acc@5: 0.1825 (18.25%)
+  Acc@10: 0.2106 (21.06%)
+
+Epoch 8 Summary:
+  Train - Loss: 2.4523 (TopK: 2.4159[0.99], CE: 5.4515) | Acc@1: 0.2396
+  Val   - Loss: 7.0567 | Acc@1: 0.1073
+  Test  - Loss: 7.0620 | Acc@1: 0.0954
+  Time: 20.13s | LR: 0.000427
+  Params: 440,669
+
+============================================================
+Epoch 9/400
+============================================================
+Epoch 9 | Batch 10/58 | Loss: 2.4172 (TopK: 2.3775, CE: 5.3179) | Acc@1: 0.2266 | Acc@5: 0.5234 | Acc@10: 0.5547 | AccumSteps: 1
+Epoch 9 | Batch 20/58 | Loss: 2.5857 (TopK: 2.5437, CE: 5.6544) | Acc@1: 0.1562 | Acc@5: 0.5234 | Acc@10: 0.5859 | AccumSteps: 1
+Epoch 9 | Batch 30/58 | Loss: 2.2882 (TopK: 2.2494, CE: 5.1270) | Acc@1: 0.2422 | Acc@5: 0.5547 | Acc@10: 0.6016 | AccumSteps: 1
+Epoch 9 | Batch 40/58 | Loss: 2.3836 (TopK: 2.3445, CE: 5.2417) | Acc@1: 0.2734 | Acc@5: 0.5156 | Acc@10: 0.5781 | AccumSteps: 1
+Epoch 9 | Batch 50/58 | Loss: 2.6445 (TopK: 2.6009, CE: 5.8367) | Acc@1: 0.2578 | Acc@5: 0.4375 | Acc@10: 0.5391 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0439
+  Acc@1: 0.1117 (11.17%)
+  Acc@5: 0.2212 (22.12%)
+  Acc@10: 0.2238 (22.38%)
+
+
+Test Results:
+  Loss: 7.0516
+  Acc@1: 0.1021 (10.21%)
+  Acc@5: 0.2103 (21.03%)
+  Acc@10: 0.2120 (21.20%)
+
+Epoch 9 Summary:
+  Train - Loss: 2.4445 (TopK: 2.4042[0.99], CE: 5.3873) | Acc@1: 0.2359
+  Val   - Loss: 7.0439 | Acc@1: 0.1117
+  Test  - Loss: 7.0516 | Acc@1: 0.1021
+  Time: 19.96s | LR: 0.000480
+  Params: 440,669
+  Saved checkpoint: checkpoints/enhanced_hrm_epoch9.pt
+  ✅ New best validation accuracy! (11.17%)
+  ✅ New best test accuracy! (10.21%)
+
+============================================================
+Epoch 10/400
+============================================================
+Epoch 10 | Batch 10/58 | Loss: 2.6270 (TopK: 2.5805, CE: 5.6817) | Acc@1: 0.1875 | Acc@5: 0.4375 | Acc@10: 0.5000 | AccumSteps: 1
+Epoch 10 | Batch 20/58 | Loss: 2.3347 (TopK: 2.2928, CE: 5.0881) | Acc@1: 0.2500 | Acc@5: 0.5391 | Acc@10: 0.6016 | AccumSteps: 1
+Epoch 10 | Batch 30/58 | Loss: 2.3958 (TopK: 2.3505, CE: 5.3680) | Acc@1: 0.2266 | Acc@5: 0.5156 | Acc@10: 0.5234 | AccumSteps: 1
+Epoch 10 | Batch 40/58 | Loss: 2.2471 (TopK: 2.2035, CE: 5.1103) | Acc@1: 0.2266 | Acc@5: 0.5391 | Acc@10: 0.6406 | AccumSteps: 1
+Epoch 10 | Batch 50/58 | Loss: 2.1453 (TopK: 2.1041, CE: 4.8509) | Acc@1: 0.2812 | Acc@5: 0.5703 | Acc@10: 0.6406 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0258
+  Acc@1: 0.1658 (16.58%)
+  Acc@5: 0.2212 (22.12%)
+  Acc@10: 0.2498 (24.98%)
+
+
+Test Results:
+  Loss: 7.0365
+  Acc@1: 0.1578 (15.78%)
+  Acc@5: 0.2103 (21.03%)
+  Acc@10: 0.2301 (23.01%)
+
+Epoch 10 Summary:
+  Train - Loss: 2.3524 (TopK: 2.3083[0.98], CE: 5.2498) | Acc@1: 0.2528
+  Val   - Loss: 7.0258 | Acc@1: 0.1658
+  Test  - Loss: 7.0365 | Acc@1: 0.1578
+  Time: 13.15s | LR: 0.000533
+  Params: 440,669
+  Saved checkpoint: checkpoints/enhanced_hrm_epoch10.pt
+  ✅ New best validation accuracy! (16.58%)
+  ✅ New best test accuracy! (15.78%)
+
+============================================================
+Epoch 11/400
+============================================================
+Epoch 11 | Batch 10/58 | Loss: 2.3560 (TopK: 2.3085, CE: 5.1886) | Acc@1: 0.2891 | Acc@5: 0.4922 | Acc@10: 0.5703 | AccumSteps: 1
+Epoch 11 | Batch 20/58 | Loss: 2.5740 (TopK: 2.5212, CE: 5.7191) | Acc@1: 0.2109 | Acc@5: 0.4453 | Acc@10: 0.5156 | AccumSteps: 1
+Epoch 11 | Batch 30/58 | Loss: 2.3411 (TopK: 2.2943, CE: 5.1324) | Acc@1: 0.2188 | Acc@5: 0.5156 | Acc@10: 0.5703 | AccumSteps: 1
+Epoch 11 | Batch 40/58 | Loss: 2.1909 (TopK: 2.1426, CE: 5.0701) | Acc@1: 0.2578 | Acc@5: 0.5547 | Acc@10: 0.6406 | AccumSteps: 1
+Epoch 11 | Batch 50/58 | Loss: 2.3726 (TopK: 2.3250, CE: 5.2093) | Acc@1: 0.2266 | Acc@5: 0.5391 | Acc@10: 0.5938 | AccumSteps: 1
+
+Validation Results:
+  Loss: 7.0012
+  Acc@1: 0.1574 (15.74%)
+  Acc@5: 0.2545 (25.45%)
+  Acc@10: 0.2895 (28.95%)
+
+
+Test Results:
+  Loss: 7.0159
+  Acc@1: 0.1584 (15.84%)
+  Acc@5: 0.2390 (23.90%)
+  Acc@10: 0.2636 (26.36%)
+
+Epoch 11 Summary:
+  Train - Loss: 2.2953 (TopK: 2.2477[0.98], CE: 5.1333) | Acc@1: 0.2639
+  Val   - Loss: 7.0012 | Acc@1: 0.1574
+  Test  - Loss: 7.0159 | Acc@1: 0.1584
+  Time: 10.26s | LR: 0.000587
+  Params: 440,669
+  ✅ New best test accuracy! (15.84%)
+
+============================================================
+Epoch 12/400
+============================================================
+Epoch 12 | Batch 10/58 | Loss: 2.1477 (TopK: 2.0975, CE: 4.8869) | Acc@1: 0.3359 | Acc@5: 0.5625 | Acc@10: 0.5938 | AccumSteps: 1
+Epoch 12 | Batch 20/58 | Loss: 2.4128 (TopK: 2.3581, CE: 5.4012) | Acc@1: 0.2188 | Acc@5: 0.5078 | Acc@10: 0.5703 | AccumSteps: 1
+Epoch 12 | Batch 30/58 | Loss: 2.4258 (TopK: 2.3735, CE: 5.2752) | Acc@1: 0.2344 | Acc@5: 0.5000 | Acc@10: 0.5625 | AccumSteps: 1
+Epoch 12 | Batch 40/58 | Loss: 2.4014 (TopK: 2.3496, CE: 5.2278) | Acc@1: 0.2812 | Acc@5: 0.4688 | Acc@10: 0.4922 | AccumSteps: 1
+Epoch 12 | Batch 50/58 | Loss: 2.2784 (TopK: 2.2255, CE: 5.1634) | Acc@1: 0.2734 | Acc@5: 0.5469 | Acc@10: 0.5859 | AccumSteps: 1
+
+Validation Results:
+  Loss: 6.9680
+  Acc@1: 0.1577 (15.77%)
+  Acc@5: 0.2771 (27.71%)
+  Acc@10: 0.3431 (34.31%)
+
+
+Test Results:
+  Loss: 6.9882
+  Acc@1: 0.1598 (15.98%)
+  Acc@5: 0.2535 (25.35%)
+  Acc@10: 0.2873 (28.73%)
+
+Epoch 12 Summary:
+  Train - Loss: 2.2850 (TopK: 2.2331[0.98], CE: 5.1157) | Acc@1: 0.2680
+  Val   - Loss: 6.9680 | Acc@1: 0.1577
+  Test  - Loss: 6.9882 | Acc@1: 0.1598
+  Time: 11.44s | LR: 0.000640
+  Params: 440,669
+  ✅ New best test accuracy! (15.98%)
+
+============================================================
+Epoch 13/400
+============================================================
+Epoch 13 | Batch 10/58 | Loss: 2.1645 (TopK: 2.1107, CE: 4.8674) | Acc@1: 0.2578 | Acc@5: 0.5625 | Acc@10: 0.6172 | AccumSteps: 1
+Epoch 13 | Batch 20/58 | Loss: 2.2030 (TopK: 2.1430, CE: 5.2169) | Acc@1: 0.2812 | Acc@5: 0.5703 | Acc@10: 0.6172 | AccumSteps: 1
+Epoch 13 | Batch 30/58 | Loss: 2.3254 (TopK: 2.2666, CE: 5.2820) | Acc@1: 0.2812 | Acc@5: 0.5156 | Acc@10: 0.6094 | AccumSteps: 1
+Epoch 13 | Batch 40/58 | Loss: 2.5129 (TopK: 2.4535, CE: 5.5032) | Acc@1: 0.2188 | Acc@5: 0.4688 | Acc@10: 0.5156 | AccumSteps: 1
+Epoch 13 | Batch 50/58 | Loss: 2.2343 (TopK: 2.1783, CE: 5.0518) | Acc@1: 0.2734 | Acc@5: 0.5391 | Acc@10: 0.5859 | AccumSteps: 1
+
+Validation Results:
+  Loss: 6.9252
+  Acc@1: 0.1641 (16.41%)
+  Acc@5: 0.3312 (33.12%)
+  Acc@10: 0.3477 (34.77%)
+
+
+Test Results:
+  Loss: 6.9532
+  Acc@1: 0.1626 (16.26%)
+  Acc@5: 0.2808 (28.08%)
+  Acc@10: 0.2951 (29.51%)
+
+Epoch 13 Summary:
+  Train - Loss: 2.2660 (TopK: 2.2104[0.98], CE: 5.0592) | Acc@1: 0.2722
+  Val   - Loss: 6.9252 | Acc@1: 0.1641
+  Test  - Loss: 6.9532 | Acc@1: 0.1626
+  Time: 10.61s | LR: 0.000693
+  Params: 440,669
+  ✅ New best test accuracy! (16.26%)
+
+============================================================
+Epoch 14/400
+============================================================
+Epoch 14 | Batch 10/58 | Loss: 2.2654 (TopK: 2.2076, CE: 4.9585) | Acc@1: 0.2969 | Acc@5: 0.5312 | Acc@10: 0.6406 | AccumSteps: 1
+Epoch 14 | Batch 20/58 | Loss: 2.1346 (TopK: 2.0770, CE: 4.8207) | Acc@1: 0.3047 | Acc@5: 0.5703 | Acc@10: 0.6172 | AccumSteps: 1
+Epoch 14 | Batch 30/58 | Loss: 2.4349 (TopK: 2.3735, CE: 5.2987) | Acc@1: 0.2734 | Acc@5: 0.5312 | Acc@10: 0.6250 | AccumSteps: 1
+Epoch 14 | Batch 40/58 | Loss: 2.1053 (TopK: 2.0477, CE: 4.7893) | Acc@1: 0.2891 | Acc@5: 0.6094 | Acc@10: 0.6484 | AccumSteps: 1
+Epoch 14 | Batch 50/58 | Loss: 2.1395 (TopK: 2.0838, CE: 4.7374) | Acc@1: 0.3281 | Acc@5: 0.5234 | Acc@10: 0.6094 | AccumSteps: 1
+
+Validation Results:
+  Loss: 6.8690
+  Acc@1: 0.1736 (17.36%)
+  Acc@5: 0.3248 (32.48%)
+  Acc@10: 0.3549 (35.49%)
+
+
+Test Results:
+  Loss: 6.9079
+  Acc@1: 0.1687 (16.87%)
+  Acc@5: 0.2859 (28.59%)
+  Acc@10: 0.3082 (30.82%)
+
+Epoch 14 Summary:
+  Train - Loss: 2.2377 (TopK: 2.1778[0.98], CE: 5.0331) | Acc@1: 0.2873
+  Val   - Loss: 6.8690 | Acc@1: 0.1736
+  Test  - Loss: 6.9079 | Acc@1: 0.1687
+  Time: 10.27s | LR: 0.000747
+  Params: 440,669
+  Saved checkpoint: checkpoints/enhanced_hrm_epoch14.pt
+  ✅ New best validation accuracy! (17.36%)
+  ✅ New best test accuracy! (16.87%)
+
+============================================================
+Epoch 15/400
+============================================================
+Epoch 15 | Batch 10/58 | Loss: 2.1919 (TopK: 2.1298, CE: 4.8899) | Acc@1: 0.2656 | Acc@5: 0.5703 | Acc@10: 0.6250 | AccumSteps: 1
+Epoch 15 | Batch 20/58 | Loss: 2.2190 (TopK: 2.1523, CE: 5.1195) | Acc@1: 0.2891 | Acc@5: 0.5547 | Acc@10: 0.6406 | AccumSteps: 1
+Epoch 15 | Batch 30/58 | Loss: 2.2139 (TopK: 2.1527, CE: 4.8711) | Acc@1: 0.2812 | Acc@5: 0.5781 | Acc@10: 0.6172 | AccumSteps: 1
+Epoch 15 | Batch 40/58 | Loss: 2.2830 (TopK: 2.2175, CE: 5.1286) | Acc@1: 0.2422 | Acc@5: 0.5391 | Acc@10: 0.6016 | AccumSteps: 1
+Epoch 15 | Batch 50/58 | Loss: 2.2150 (TopK: 2.1491, CE: 5.0740) | Acc@1: 0.2422 | Acc@5: 0.5859 | Acc@10: 0.6406 | AccumSteps: 1
+
+Validation Results:
+  Loss: 6.7988
+  Acc@1: 0.1785 (17.85%)
+  Acc@5: 0.3338 (33.38%)
+  Acc@10: 0.3764 (37.64%)
+
+
+Test Results:
+  Loss: 6.8515
+  Acc@1: 0.1732 (17.32%)
+  Acc@5: 0.3018 (30.18%)
+  Acc@10: 0.3361 (33.61%)
+
+Epoch 15 Summary:
+  Train - Loss: 2.2497 (TopK: 2.1860[0.98], CE: 5.0152) | Acc@1: 0.2831
+  Val   - Loss: 6.7988 | Acc@1: 0.1785
+  Test  - Loss: 6.8515 | Acc@1: 0.1732
+  Time: 14.74s | LR: 0.000800
+  Params: 440,669
+  Saved checkpoint: checkpoints/enhanced_hrm_epoch15.pt
+  ✅ New best validation accuracy! (17.85%)
+  ✅ New best test accuracy! (17.32%)
+
+============================================================
+Epoch 16/400
+============================================================
+Epoch 16 | Batch 10/58 | Loss: 2.0490 (TopK: 1.9855, CE: 4.6311) | Acc@1: 0.3125 | Acc@5: 0.6328 | Acc@10: 0.6641 | AccumSteps: 1
+Epoch 16 | Batch 20/58 | Loss: 2.0298 (TopK: 1.9683, CE: 4.5285) | Acc@1: 0.3359 | Acc@5: 0.5938 | Acc@10: 0.6250 | AccumSteps: 1
+Epoch 16 | Batch 30/58 | Loss: 2.1176 (TopK: 2.0512, CE: 4.8193) | Acc@1: 0.3359 | Acc@5: 0.5625 | Acc@10: 0.6406 | AccumSteps: 1
+Epoch 16 | Batch 40/58 | Loss: 2.1798 (TopK: 2.1095, CE: 5.0399) | Acc@1: 0.2891 | Acc@5: 0.5625 | Acc@10: 0.6250 | AccumSteps: 1
+Epoch 16 | Batch 50/58 | Loss: 2.2866 (TopK: 2.2161, CE: 5.1534) | Acc@1: 0.2812 | Acc@5: 0.5391 | Acc@10: 0.6094 | AccumSteps: 1
+
+Validation Results:
+  Loss: 6.7133
+  Acc@1: 0.1785 (17.85%)
+  Acc@5: 0.3523 (35.23%)
+  Acc@10: 0.4079 (40.79%)
+
+
+Test Results:
+  Loss: 6.7820
+  Acc@1: 0.1724 (17.24%)
+  Acc@5: 0.3141 (31.41%)
+  Acc@10: 0.3615 (36.15%)
+
+Epoch 16 Summary:
+  Train - Loss: 2.2237 (TopK: 2.1553[0.98], CE: 5.0050) | Acc@1: 0.2942
+  Val   - Loss: 6.7133 | Acc@1: 0.1785
+  Test  - Loss: 6.7820 | Acc@1: 0.1724
+  Time: 20.79s | LR: 0.000799
+  Params: 440,669
+
+============================================================
+Epoch 17/400
+============================================================
+Epoch 17 | Batch 10/58 | Loss: 1.8053 (TopK: 1.7407, CE: 4.2756) | Acc@1: 0.3906 | Acc@5: 0.6562 | Acc@10: 0.6719 | AccumSteps: 1
+Epoch 17 | Batch 20/58 | Loss: 2.2805 (TopK: 2.2083, CE: 5.0383) | Acc@1: 0.3125 | Acc@5: 0.5625 | Acc@10: 0.6328 | AccumSteps: 1
+Epoch 17 | Batch 30/58 | Loss: 2.4708 (TopK: 2.3919, CE: 5.4861) | Acc@1: 0.1719 | Acc@5: 0.4844 | Acc@10: 0.5547 | AccumSteps: 1
+Epoch 17 | Batch 40/58 | Loss: 2.2799 (TopK: 2.2120, CE: 4.8744) | Acc@1: 0.2969 | Acc@5: 0.5078 | Acc@10: 0.5703 | AccumSteps: 1
+Epoch 17 | Batch 50/58 | Loss: 2.3721 (TopK: 2.2915, CE: 5.4502) | Acc@1: 0.2969 | Acc@5: 0.5312 | Acc@10: 0.6016 | AccumSteps: 1
+
+Validation Results:
+  Loss: 6.6155
+  Acc@1: 0.1782 (17.82%)
+  Acc@5: 0.3853 (38.53%)
+  Acc@10: 0.4407 (44.07%)
+
+
+Test Results:
+  Loss: 6.7012
+  Acc@1: 0.1710 (17.10%)
+  Acc@5: 0.3316 (33.16%)
+  Acc@10: 0.3682 (36.82%)
+
+Epoch 17 Summary:
+  Train - Loss: 2.2377 (TopK: 2.1648[0.97], CE: 5.0234) | Acc@1: 0.2947
+  Val   - Loss: 6.6155 | Acc@1: 0.1782
+  Test  - Loss: 6.7012 | Acc@1: 0.1710
+  Time: 20.58s | LR: 0.000798
+  Params: 440,669
+
+============================================================
+Epoch 18/400
+============================================================
+Epoch 18 | Batch 10/58 | Loss: 2.2939 (TopK: 2.2169, CE: 5.0707) | Acc@1: 0.2188 | Acc@5: 0.5234 | Acc@10: 0.5938 | AccumSteps: 1
+Epoch 18 | Batch 20/58 | Loss: 2.2139 (TopK: 2.1372, CE: 4.9776) | Acc@1: 0.3047 | Acc@5: 0.5469 | Acc@10: 0.6250 | AccumSteps: 1
+Epoch 18 | Batch 30/58 | Loss: 2.3046 (TopK: 2.2278, CE: 5.0699) | Acc@1: 0.3281 | Acc@5: 0.5234 | Acc@10: 0.5781 | AccumSteps: 1
+Epoch 18 | Batch 40/58 | Loss: 2.2321 (TopK: 2.1564, CE: 4.9607) | Acc@1: 0.2969 | Acc@5: 0.5391 | Acc@10: 0.6172 | AccumSteps: 1
+Epoch 18 | Batch 50/58 | Loss: 2.5505 (TopK: 2.4668, CE: 5.5653) | Acc@1: 0.2344 | Acc@5: 0.4609 | Acc@10: 0.5234 | AccumSteps: 1
+
+Validation Results:
+  Loss: 6.5095
+  Acc@1: 0.1780 (17.80%)
+  Acc@5: 0.4137 (41.37%)
+  Acc@10: 0.4693 (46.93%)
+
+
+Test Results:
+  Loss: 6.6124
+  Acc@1: 0.1699 (16.99%)
+  Acc@5: 0.3439 (34.39%)
+  Acc@10: 0.3849 (38.49%)
+
+Epoch 18 Summary:
+  Train - Loss: 2.2278 (TopK: 2.1528[0.97], CE: 4.9301) | Acc@1: 0.2914
+  Val   - Loss: 6.5095 | Acc@1: 0.1780
+  Test  - Loss: 6.6124 | Acc@1: 0.1699
+  Time: 20.22s | LR: 0.000795
+  Params: 440,669
+
+============================================================
+Epoch 19/400
+============================================================
+Epoch 19 | Batch 10/58 | Loss: 2.0728 (TopK: 1.9967, CE: 4.6684) | Acc@1: 0.3125 | Acc@5: 0.6250 | Acc@10: 0.6641 | AccumSteps: 1
+Epoch 19 | Batch 20/58 | Loss: 2.1908 (TopK: 2.1159, CE: 4.7408) | Acc@1: 0.2656 | Acc@5: 0.5625 | Acc@10: 0.6484 | AccumSteps: 1
+Epoch 19 | Batch 30/58 | Loss: 2.0996 (TopK: 2.0254, CE: 4.6268) | Acc@1: 0.3594 | Acc@5: 0.5781 | Acc@10: 0.6406 | AccumSteps: 1
