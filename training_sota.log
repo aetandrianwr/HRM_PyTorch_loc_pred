@@ -1,0 +1,282 @@
+/usr/local/lib/python3.9/dist-packages/torch/optim/lr_scheduler.py:131: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+Using device: cuda
+GPU: NVIDIA L4
+
+============================================================
+Loading datasets...
+============================================================
+Loaded 7424 samples from data/geolife/geolife_transformer_7_train.pk
+Vocabulary size: 1187 (unique locations: 1156)
+Loaded 3334 samples from data/geolife/geolife_transformer_7_validation.pk
+Vocabulary size: 1176 (unique locations: 382)
+Loaded 3502 samples from data/geolife/geolife_transformer_7_test.pk
+Vocabulary size: 1177 (unique locations: 355)
+Train: 7424, Val: 3334, Test: 3502
+
+============================================================
+Initializing SOTA Transformer...
+============================================================
+Total parameters: 504,064
+✓ Within <500K budget!
+
+SOTA Techniques:
+  ✓ Weight tying (shared embeddings)
+  ✓ Multi-query attention (2 KV heads)
+  ✓ Rotary position embeddings
+  ✓ ALiBi recency bias
+  ✓ RMSNorm
+  ✓ 5 transformer layers
+  ✓ Hidden size: 104
+
+============================================================
+Training SOTA Transformer...
+============================================================
+
+
+============================================================
+Epoch 1/300
+============================================================
+Epoch 1 | Batch 10/58 | Loss: 6.8080 | Acc@1: 0.1094
+Epoch 1 | Batch 20/58 | Loss: 6.7491 | Acc@1: 0.1562
+Epoch 1 | Batch 30/58 | Loss: 6.6090 | Acc@1: 0.1953
+Epoch 1 | Batch 40/58 | Loss: 6.5879 | Acc@1: 0.1719
+Epoch 1 | Batch 50/58 | Loss: 6.4762 | Acc@1: 0.1953
+
+Validation Results:
+  Loss: 6.6558
+  Acc@1: 0.1233 (12.33%)
+  Acc@5: 0.2446 (24.46%)
+  Acc@10: 0.3219 (32.19%)
+
+Test Results:
+  Loss: 6.6496
+  Acc@1: 0.1231 (12.31%)
+  Acc@5: 0.2569 (25.69%)
+  Acc@10: 0.3542 (35.42%)
+
+Epoch 1 Summary:
+  Train - Loss: 6.7014 | Acc@1: 0.1534
+  Val   - Loss: 6.6558 | Acc@1: 0.1233
+  Test  - Loss: 6.6496 | Acc@1: 0.1231
+  Time: 16.84s | LR: 0.000064
+  Params: 504,064
+  Saved checkpoint
+  ✅ New best validation: 12.33%
+  ✅ New best test: 12.31%
+
+============================================================
+Epoch 2/300
+============================================================
+Epoch 2 | Batch 10/58 | Loss: 6.4685 | Acc@1: 0.1953
+Epoch 2 | Batch 20/58 | Loss: 6.4250 | Acc@1: 0.1953
+Epoch 2 | Batch 30/58 | Loss: 6.3166 | Acc@1: 0.2656
+Epoch 2 | Batch 40/58 | Loss: 6.3621 | Acc@1: 0.2188
+Epoch 2 | Batch 50/58 | Loss: 6.2172 | Acc@1: 0.2109
+
+Validation Results:
+  Loss: 6.4203
+  Acc@1: 0.1299 (12.99%)
+  Acc@5: 0.3386 (33.86%)
+  Acc@10: 0.4235 (42.35%)
+
+Test Results:
+  Loss: 6.4484
+  Acc@1: 0.1201 (12.01%)
+  Acc@5: 0.3661 (36.61%)
+  Acc@10: 0.4461 (44.61%)
+
+Epoch 2 Summary:
+  Train - Loss: 6.3737 | Acc@1: 0.2112
+  Val   - Loss: 6.4203 | Acc@1: 0.1299
+  Test  - Loss: 6.4484 | Acc@1: 0.1201
+  Time: 14.89s | LR: 0.000076
+  Params: 504,064
+  Saved checkpoint
+  ✅ New best validation: 12.99%
+
+============================================================
+Epoch 3/300
+============================================================
+Epoch 3 | Batch 10/58 | Loss: 6.1992 | Acc@1: 0.2891
+Epoch 3 | Batch 20/58 | Loss: 6.1262 | Acc@1: 0.1875
+Epoch 3 | Batch 30/58 | Loss: 6.0408 | Acc@1: 0.2734
+Epoch 3 | Batch 40/58 | Loss: 6.0173 | Acc@1: 0.2734
+Epoch 3 | Batch 50/58 | Loss: 5.9899 | Acc@1: 0.2500
+
+Validation Results:
+  Loss: 6.1257
+  Acc@1: 0.1664 (16.64%)
+  Acc@5: 0.4302 (43.02%)
+  Acc@10: 0.5081 (50.81%)
+
+Test Results:
+  Loss: 6.2000
+  Acc@1: 0.1577 (15.77%)
+  Acc@5: 0.4154 (41.54%)
+  Acc@10: 0.4884 (48.84%)
+
+Epoch 3 Summary:
+  Train - Loss: 6.1258 | Acc@1: 0.2421
+  Val   - Loss: 6.1257 | Acc@1: 0.1664
+  Test  - Loss: 6.2000 | Acc@1: 0.1577
+  Time: 15.80s | LR: 0.000095
+  Params: 504,064
+  Saved checkpoint
+  ✅ New best validation: 16.64%
+  ✅ New best test: 15.77%
+
+============================================================
+Epoch 4/300
+============================================================
+Epoch 4 | Batch 10/58 | Loss: 5.9971 | Acc@1: 0.1953
+Epoch 4 | Batch 20/58 | Loss: 5.8129 | Acc@1: 0.2422
+Epoch 4 | Batch 30/58 | Loss: 5.7049 | Acc@1: 0.3281
+Epoch 4 | Batch 40/58 | Loss: 5.6787 | Acc@1: 0.2188
+Epoch 4 | Batch 50/58 | Loss: 5.6986 | Acc@1: 0.2422
+
+Validation Results:
+  Loss: 5.8307
+  Acc@1: 0.1881 (18.81%)
+  Acc@5: 0.4713 (47.13%)
+  Acc@10: 0.5350 (53.50%)
+
+Test Results:
+  Loss: 5.9562
+  Acc@1: 0.1735 (17.35%)
+  Acc@5: 0.4441 (44.41%)
+  Acc@10: 0.5033 (50.33%)
+
+Epoch 4 Summary:
+  Train - Loss: 5.8481 | Acc@1: 0.2590
+  Val   - Loss: 5.8307 | Acc@1: 0.1881
+  Test  - Loss: 5.9562 | Acc@1: 0.1735
+  Time: 14.68s | LR: 0.000122
+  Params: 504,064
+  Saved checkpoint
+  ✅ New best validation: 18.81%
+  ✅ New best test: 17.35%
+
+============================================================
+Epoch 5/300
+============================================================
+Epoch 5 | Batch 10/58 | Loss: 5.7097 | Acc@1: 0.2031
+Epoch 5 | Batch 20/58 | Loss: 5.4715 | Acc@1: 0.3125
+Epoch 5 | Batch 30/58 | Loss: 5.2821 | Acc@1: 0.3047
+Epoch 5 | Batch 40/58 | Loss: 5.3644 | Acc@1: 0.2734
+Epoch 5 | Batch 50/58 | Loss: 5.1511 | Acc@1: 0.3281
+
+Validation Results:
+  Loss: 5.5108
+  Acc@1: 0.1959 (19.59%)
+  Acc@5: 0.4881 (48.81%)
+  Acc@10: 0.5509 (55.09%)
+
+Test Results:
+  Loss: 5.6880
+  Acc@1: 0.1810 (18.10%)
+  Acc@5: 0.4552 (45.52%)
+  Acc@10: 0.4924 (49.24%)
+
+Epoch 5 Summary:
+  Train - Loss: 5.5405 | Acc@1: 0.2740
+  Val   - Loss: 5.5108 | Acc@1: 0.1959
+  Test  - Loss: 5.6880 | Acc@1: 0.1810
+  Time: 15.62s | LR: 0.000157
+  Params: 504,064
+  Saved checkpoint
+  ✅ New best validation: 19.59%
+  ✅ New best test: 18.10%
+
+============================================================
+Epoch 6/300
+============================================================
+Epoch 6 | Batch 10/58 | Loss: 5.6204 | Acc@1: 0.3125
+Epoch 6 | Batch 20/58 | Loss: 5.2445 | Acc@1: 0.2500
+Epoch 6 | Batch 30/58 | Loss: 5.1210 | Acc@1: 0.3125
+Epoch 6 | Batch 40/58 | Loss: 5.5887 | Acc@1: 0.3047
+Epoch 6 | Batch 50/58 | Loss: 5.0714 | Acc@1: 0.3359
+
+Validation Results:
+  Loss: 5.1856
+  Acc@1: 0.1881 (18.81%)
+  Acc@5: 0.5194 (51.94%)
+  Acc@10: 0.5637 (56.37%)
+
+Test Results:
+  Loss: 5.4205
+  Acc@1: 0.1775 (17.75%)
+  Acc@5: 0.4620 (46.20%)
+  Acc@10: 0.5035 (50.35%)
+
+Epoch 6 Summary:
+  Train - Loss: 5.1947 | Acc@1: 0.2881
+  Val   - Loss: 5.1856 | Acc@1: 0.1881
+  Test  - Loss: 5.4205 | Acc@1: 0.1775
+  Time: 14.55s | LR: 0.000198
+  Params: 504,064
+
+============================================================
+Epoch 7/300
+============================================================
+Epoch 7 | Batch 10/58 | Loss: 4.7497 | Acc@1: 0.2969
+Epoch 7 | Batch 20/58 | Loss: 4.5490 | Acc@1: 0.3047
+Epoch 7 | Batch 30/58 | Loss: 4.6324 | Acc@1: 0.3438
+Epoch 7 | Batch 40/58 | Loss: 4.6933 | Acc@1: 0.3516
+Epoch 7 | Batch 50/58 | Loss: 4.7801 | Acc@1: 0.2266
+
+Validation Results:
+  Loss: 5.0368
+  Acc@1: 0.2028 (20.28%)
+  Acc@5: 0.4786 (47.86%)
+  Acc@10: 0.5570 (55.70%)
+
+Test Results:
+  Loss: 5.3478
+  Acc@1: 0.1911 (19.11%)
+  Acc@5: 0.4405 (44.05%)
+  Acc@10: 0.4937 (49.37%)
+
+Epoch 7 Summary:
+  Train - Loss: 4.8448 | Acc@1: 0.2974
+  Val   - Loss: 5.0368 | Acc@1: 0.2028
+  Test  - Loss: 5.3478 | Acc@1: 0.1911
+  Time: 15.86s | LR: 0.000245
+  Params: 504,064
+  Saved checkpoint
+  ✅ New best validation: 20.28%
+  ✅ New best test: 19.11%
+
+============================================================
+Epoch 8/300
+============================================================
+Epoch 8 | Batch 10/58 | Loss: 4.5204 | Acc@1: 0.2812
+Epoch 8 | Batch 20/58 | Loss: 4.7498 | Acc@1: 0.3047
+Epoch 8 | Batch 30/58 | Loss: 4.4033 | Acc@1: 0.3594
+Epoch 8 | Batch 40/58 | Loss: 4.4731 | Acc@1: 0.3281
+Epoch 8 | Batch 50/58 | Loss: 4.4353 | Acc@1: 0.2578
+
+Validation Results:
+  Loss: 4.7060
+  Acc@1: 0.2419 (24.19%)
+  Acc@5: 0.4997 (49.97%)
+  Acc@10: 0.5744 (57.44%)
+
+Test Results:
+  Loss: 5.0122
+  Acc@1: 0.2312 (23.12%)
+  Acc@5: 0.4509 (45.09%)
+  Acc@10: 0.5038 (50.38%)
+
+Epoch 8 Summary:
+  Train - Loss: 4.6474 | Acc@1: 0.3163
+  Val   - Loss: 4.7060 | Acc@1: 0.2419
+  Test  - Loss: 5.0122 | Acc@1: 0.2312
+  Time: 14.87s | LR: 0.000298
+  Params: 504,064
+  Saved checkpoint
+  ✅ New best validation: 24.19%
+  ✅ New best test: 23.12%
+
+============================================================
+Epoch 9/300
